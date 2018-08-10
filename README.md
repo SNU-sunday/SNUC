@@ -1,4 +1,6 @@
 # SNUC
-------
-Control program tool for the SNUC. \n
+
+
+Control program tool for the SNUC.
+
 Current version contains only GUI template.
