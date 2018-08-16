@@ -21,6 +21,7 @@ namespace PSNUC {
 			//
 			//TODO: 생성자 코드를 여기에 추가합니다.
 			//
+			
 		}
 
 	protected:
@@ -39,7 +40,8 @@ namespace PSNUC {
 
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button3;
-	private: System::Windows::Forms::Button^  button4;
+	private: System::Windows::Forms::Button^  Go_to_home;
+
 	private: System::Windows::Forms::Button^  help_button;
 	private: System::Windows::Forms::Label^  sysTime;
 
@@ -49,7 +51,8 @@ namespace PSNUC {
 	private: System::Windows::Forms::Button^  stop_button;
 
 	private: System::Windows::Forms::ProgressBar^  progressBar1;
-	private: System::Windows::Forms::Button^  button8;
+	private: System::Windows::Forms::Button^  Connect;
+
 	private: System::Windows::Forms::TabControl^  tab1;
 
 	private: System::Windows::Forms::TabPage^  sys_monitor_tab;
@@ -67,6 +70,7 @@ namespace PSNUC {
 	private: System::Windows::Forms::Label^  setting_label;
 	private: System::Windows::Forms::Label^  control_label;
 	private: System::Windows::Forms::Label^  status_label;
+	private: System::Windows::Forms::Button^  Disconnect;
 
 
 
@@ -88,13 +92,13 @@ namespace PSNUC {
 			this->close_button = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->Go_to_home = (gcnew System::Windows::Forms::Button());
 			this->help_button = (gcnew System::Windows::Forms::Button());
 			this->sysTime = (gcnew System::Windows::Forms::Label());
 			this->run_button = (gcnew System::Windows::Forms::Button());
 			this->stop_button = (gcnew System::Windows::Forms::Button());
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
-			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->Connect = (gcnew System::Windows::Forms::Button());
 			this->tab1 = (gcnew System::Windows::Forms::TabControl());
 			this->sys_monitor_tab = (gcnew System::Windows::Forms::TabPage());
 			this->error_tab = (gcnew System::Windows::Forms::TabPage());
@@ -108,6 +112,7 @@ namespace PSNUC {
 			this->setting_label = (gcnew System::Windows::Forms::Label());
 			this->control_label = (gcnew System::Windows::Forms::Label());
 			this->status_label = (gcnew System::Windows::Forms::Label());
+			this->Disconnect = (gcnew System::Windows::Forms::Button());
 			this->tab1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -119,7 +124,7 @@ namespace PSNUC {
 			this->close_button->TabIndex = 0;
 			this->close_button->Text = L"Close";
 			this->close_button->UseVisualStyleBackColor = true;
-			this->close_button->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->close_button->Click += gcnew System::EventHandler(this, &MyForm::close_button_Click);
 			// 
 			// button2
 			// 
@@ -140,14 +145,14 @@ namespace PSNUC {
 			this->button3->Text = L"View Log";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
-			// button4
+			// Go_to_home
 			// 
-			this->button4->Location = System::Drawing::Point(122, 223);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(106, 23);
-			this->button4->TabIndex = 3;
-			this->button4->Text = L"Go to Home";
-			this->button4->UseVisualStyleBackColor = true;
+			this->Go_to_home->Location = System::Drawing::Point(234, 223);
+			this->Go_to_home->Name = L"Go_to_home";
+			this->Go_to_home->Size = System::Drawing::Size(106, 23);
+			this->Go_to_home->TabIndex = 3;
+			this->Go_to_home->Text = L"Go to Home";
+			this->Go_to_home->UseVisualStyleBackColor = true;
 			// 
 			// help_button
 			// 
@@ -166,6 +171,8 @@ namespace PSNUC {
 			this->sysTime->Name = L"sysTime";
 			this->sysTime->Size = System::Drawing::Size(201, 12);
 			this->sysTime->TabIndex = 5;
+			//DateTime datetime = DateTime::Now;
+			//this->sysTime->Text = datetime.ToString();
 			this->sysTime->Text = L"System Time : 2018-08-13 00:00:00";
 			// 
 			// run_button
@@ -193,14 +200,14 @@ namespace PSNUC {
 			this->progressBar1->Size = System::Drawing::Size(216, 23);
 			this->progressBar1->TabIndex = 8;
 			// 
-			// button8
+			// Connect
 			// 
-			this->button8->Location = System::Drawing::Point(12, 223);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(104, 23);
-			this->button8->TabIndex = 9;
-			this->button8->Text = L"Connect";
-			this->button8->UseVisualStyleBackColor = true;
+			this->Connect->Location = System::Drawing::Point(12, 223);
+			this->Connect->Name = L"Connect";
+			this->Connect->Size = System::Drawing::Size(104, 23);
+			this->Connect->TabIndex = 9;
+			this->Connect->Text = L"Connect";
+			this->Connect->UseVisualStyleBackColor = true;
 			// 
 			// tab1
 			// 
@@ -281,7 +288,7 @@ namespace PSNUC {
 			// 
 			// DD_set_button
 			// 
-			this->DD_set_button->Location = System::Drawing::Point(68, 117);
+			this->DD_set_button->Location = System::Drawing::Point(68, 126);
 			this->DD_set_button->Name = L"DD_set_button";
 			this->DD_set_button->Size = System::Drawing::Size(104, 23);
 			this->DD_set_button->TabIndex = 16;
@@ -290,7 +297,7 @@ namespace PSNUC {
 			// 
 			// servo_set_button
 			// 
-			this->servo_set_button->Location = System::Drawing::Point(68, 146);
+			this->servo_set_button->Location = System::Drawing::Point(68, 155);
 			this->servo_set_button->Name = L"servo_set_button";
 			this->servo_set_button->Size = System::Drawing::Size(104, 23);
 			this->servo_set_button->TabIndex = 17;
@@ -324,11 +331,21 @@ namespace PSNUC {
 			this->status_label->TabIndex = 20;
 			this->status_label->Text = L"Status";
 			// 
+			// Disconnect
+			// 
+			this->Disconnect->Location = System::Drawing::Point(122, 223);
+			this->Disconnect->Name = L"Disconnect";
+			this->Disconnect->Size = System::Drawing::Size(106, 23);
+			this->Disconnect->TabIndex = 21;
+			this->Disconnect->Text = L"Disconnect";
+			this->Disconnect->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(7, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(584, 661);
+			this->Controls->Add(this->Disconnect);
 			this->Controls->Add(this->status_label);
 			this->Controls->Add(this->control_label);
 			this->Controls->Add(this->setting_label);
@@ -340,32 +357,36 @@ namespace PSNUC {
 			this->Controls->Add(this->code_button);
 			this->Controls->Add(this->version_label);
 			this->Controls->Add(this->tab1);
-			this->Controls->Add(this->button8);
+			this->Controls->Add(this->Connect);
 			this->Controls->Add(this->progressBar1);
 			this->Controls->Add(this->stop_button);
 			this->Controls->Add(this->run_button);
 			this->Controls->Add(this->sysTime);
 			this->Controls->Add(this->help_button);
-			this->Controls->Add(this->button4);
+			this->Controls->Add(this->Go_to_home);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->close_button);
 			this->Name = L"MyForm";
 			this->Text = L"PSNUC Control Pad";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->tab1->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void close_button_Click(System::Object^  sender, System::EventArgs^  e) {
 		Close();
 	}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
 	private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
-private: System::Void code_button_Click(System::Object^  sender, System::EventArgs^  e) {
-}
+	private: System::Void code_button_Click(System::Object^  sender, System::EventArgs^  e) {
+		System::Diagnostics::Process::Start("https://github.com/SNU-sunday/SNUC/tree/PSNUC");
+	}
+	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
 };
 }
