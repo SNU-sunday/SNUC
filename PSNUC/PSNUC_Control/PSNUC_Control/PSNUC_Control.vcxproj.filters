@@ -36,9 +36,27 @@
     <ClCompile Include="PSNUC_Control.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ViewPlotScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="setDDscreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="setServoscreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="PSNUC_Control.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ViewPlotScreen.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="setDDscreen.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="setServoscreen.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -46,10 +64,27 @@
     <QtUic Include="PSNUC_Control.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="ViewPlotScreen.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="setDDscreen.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="setServoscreen.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="PSNUC_Control.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="PSNUC_Control.rc" />
   </ItemGroup>
 </Project>
