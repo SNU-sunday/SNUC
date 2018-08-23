@@ -1,0 +1,11 @@
+﻿  main.cpp
+  PSNUC_Control.cpp
+  setDDscreen.cpp
+  setServoscreen.cpp
+  ViewPlotScreen.cpp
+  moc_PSNUC_Control.cpp
+  moc_setServoscreen.cpp
+  moc_setDDscreen.cpp
+  moc_ViewPlotScreen.cpp
+  qrc_PSNUC_Control.cpp
+  PSNUC_Control.vcxproj -> D:\github\SNU-sunday\SNUC\PSNUC\PSNUC_Control\x64\Release\PSNUC_Control.exe
